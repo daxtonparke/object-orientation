@@ -359,8 +359,8 @@ class Vehicle{
   this.mileage = mileage
 }
 move(miles){
-  let newMiles = this.mileage + miles
-  console.log(newMiles)
+  this.mileage += miles
+  console.log(this.mileage)
 }
 }
 
@@ -378,18 +378,23 @@ myFirstVehicle.move(20000)
   new ones: make and isCool. (Hint: don't forget to call the super function)
 */
 
-//Code Here
+class Motorcycle extends Vehicle{
+  constructor(passengers, color, mileage, make, iscool){
+  super(passengers, color, mileage)
+  this.make = make
+  this.iscool = iscool
+  }
+}
 
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
-//Code Here 
-
+myFirstMotorcycle = new Motorcycle(2, 'black', 40000, 'harley', true)
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
-
+myFirstMotorcycle.move(30000)
 /*
   Let's make another class based off of Vehicle. 
 
@@ -406,30 +411,44 @@ myFirstVehicle.move(20000)
   This function should set isSeaworthy to be true
 */
 
-//Code Here
-
+class Boat extends Vehicle{
+  constructor(passengers,color, mileage, name, type, isSeaworthy){
+  super (passengers,color,mileage)
+  this.name = name
+  this.type = type
+  this.isSeaworthy =isSeaworthy
+  }
+  checkSeaWorthyness(){
+    if (this.isSeaworthy === true){
+      console.log(`the ${this.color} ${this.type} ${this.name} is seawothy!`)
+    } else if (this.isSeaworthy === false){
+      console.log(`you need to get your ${this.type} in shape`)
+    }
+  }
+  performMaintenance(){
+    this.isSeaworthy = true
+  }
+}
 
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
   properties except isSeaworthy -- make that one false. Call your variable myFirstBoat.
 */
 
-//Code Here
-
+myFirstBoat = new Boat(2, "black", 38, 'c4', 'ski boat', false)
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
-//Code Here
+myFirstBoat.checkSeaWorthyness()
 
 /*
   Now run the performMaintenance method on your boat
 */
 
-//Code Here 
-
+myFirstBoat.performMaintenance()
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
 
-//Code Here
+myFirstBoat.checkSeaWorthyness()
