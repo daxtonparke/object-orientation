@@ -4,8 +4,10 @@
   Give it a key of name with the value being your name, and another key of age with the value being your age.
 */
 
-//Code here
-
+const Me = {
+  name: 'Dax',
+  age: 20
+}
 
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
@@ -15,21 +17,24 @@
 //name (a string), color (a string), age (a number),
 //and goodBoy/goodGirl (a boolean).
 
-//Code here
-
+const Dog = {
+  name: 'god',
+  color: 'black',
+  age: 7,
+  goodboy: true
+}
 
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
-//Code here
-
+console.log(Dog.name)
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
-//Code here
+console.log(Dog['color'])
 
 
 
@@ -39,23 +44,30 @@
   Have the values to those keys be strings that are equal to your favorite thing in that category.
 */
 
-//Code here
+const FavoriteThings = {
+  band: '$uicideboy$',
+  food: 'pizza',
+  person: 'mom',
+  book: 'the hobbit',
+  movie: 'Superbad',
+  holiday: 'halloween'
+}
 
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
-//Code here
-
+FavoriteThings.car = 'countache'
+FavoriteThings.show = 'rick and morty'
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
-//Code here
-
+FavoriteThings.food = 'chicken nuggets'
+FavoriteThings.book = 'harry potter'
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -72,8 +84,7 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
-
+let carColor
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
