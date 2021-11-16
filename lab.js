@@ -166,7 +166,8 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-
+user.name = 'Bryan G. Smith'
+user.email ='bryan.smith@devmounta.in'
 
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
@@ -174,8 +175,7 @@ var user = {
   Using the user object above, delete the users age off of the object.
 */
 
-//Code Here
-
+delete user.age
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -184,8 +184,16 @@ var user = {
   Print the name of your cat instance using dot notation.
 */
 
-//Code here
+class Cat {
+  constructor(name, age, color ){
+    this.name = name
+    this.age = age
+    this.color = color
+  }
+}
 
+tony = new Cat('tony', 15, 'black')
+console.log(tony.name)
 
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
@@ -196,7 +204,19 @@ var user = {
   Call the castSpell function on the instance of your wizard.
 */
 
-//Code here
+class Wizard{
+  constructor(name, age, favoriteSpell){
+  this.name = name
+  this.age = age
+  this.favoriteSpell = favoriteSpell
+  }
+  castSpell(){
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+}
+gandalf = new Wizard('gandalf', 20, 'fireball')
+
+gandalf.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -221,7 +241,23 @@ var user = {
     to be newPrice.
 */
 
-//Code Here
+class Phone{
+  constructor(brand, model, storage, color, price,){
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color 
+    this.price = price
+    this.sold = false
+  }
+  sell(){
+    this.sold = !this.sold
+    console.log(`${this.brand} ${this.model} has been sold.`)
+  }
+  changeprice(newPrice){
+this.price = newPrice
+  }
+}
 
   
 /*
@@ -234,7 +270,9 @@ var user = {
     - price: number
 */
 
-//Code Here
+iphone = new Phone('iphone', 'x', '1tb', 'black', 1000)
+google = new Phone('google', 'pixel', '500gb', 'green', 500)
+daxphone = new Phone('daxphone', 'spaceship', '100tb', 'silver', 50)
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -242,9 +280,8 @@ var user = {
 
   Then console.log that object to see the price change
 */ 
-
-//Code Here 
-
+daxphone.changeprice(200)
+console.log(daxphone)
 
 /*
   Now call the sell method on one of your other phone objects
@@ -252,9 +289,8 @@ var user = {
   Print the value of that phone's sell property to make sure it's been changed to true
 */
 
-//Code Here 
-
-
+daxphone.sell()
+console.log(daxphone)
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
 /*
@@ -271,9 +307,8 @@ const colors = {
 }
 //do not edit this object
 
-//Code Here 
-
-
+let colorscopy = {...colors}
+console.log(colorscopy)
 
 /*
  Now use the spread operator to combine the following 2 objects into one. 
@@ -299,8 +334,8 @@ const shippingInfo = {
 }
 //do not edit the objects above
 
-//Code Here
-
+let helensinfo = {...shippingInfo , ...contactInfo}
+console.log(helensinfo)
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
@@ -317,16 +352,24 @@ const shippingInfo = {
   And finally, print the value of the mileage.
 */
 
-//Code Here 
-
+class Vehicle{
+  constructor(passengers, color, mileage){
+  this.passengers = passengers
+  this.color = color
+  this.mileage = mileage
+}
+move(miles){
+  let newMiles = this.mileage + miles
+  console.log(newMiles)
+}
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
-//Code Here
-
-
+myFirstVehicle = new Vehicle(5, 'subaru blue', 80000)
+myFirstVehicle.move(20000)
 /* 
   Now we'll create a class that's based off of the vehicle class. 
 
