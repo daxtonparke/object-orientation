@@ -84,8 +84,10 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-let carColor
-
+let {color: color2} = carDetails
+let {make: make2} = carDetails
+let {model: model2} = carDetails
+let {year: year2} = carDetails
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -95,9 +97,9 @@ let carColor
   The property names are firstName, lastName, and title.
 */
 
+
 function greeting( obj ) {
-  //Code Here
-  
+const {firstName, lastName, title} = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -114,11 +116,19 @@ function greeting( obj ) {
   Use object destructuring to save the property values to new variables.
   Sum up the values and return the total number.
 */
+// const states={
+//   utah: 20,
+//   california: 30,
+//   texas: 40,
+//   arizona: 50
+// }
 
-//Code Here
+function totalPopulation(obj){
+  const {utah, california, texas, arizona} = obj
+  return (utah + california + texas + arizona)
+}
 
-
-
+// console.log(totalPopulation(states))
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
 /*
@@ -129,7 +139,12 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+function ingredients(obj){
+  let arr = []
+  const {carb, fat, protien} = obj
+  arr.push(carb, fat, protien)
+  return arr
+}
 
 
 
@@ -151,7 +166,7 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-//Code Here
+
 
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
